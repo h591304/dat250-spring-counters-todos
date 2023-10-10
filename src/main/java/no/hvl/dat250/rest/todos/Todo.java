@@ -19,6 +19,7 @@ public class Todo {
     public Todo(String summary, String description) {
         this(null, summary, description);
     }
+
     public Long getId() {
         return id;
     }
@@ -45,10 +46,13 @@ public class Todo {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         Todo todo = (Todo) o;
-        return Objects.equals(id, todo.id) && Objects.equals(summary, todo.summary) && Objects.equals(description, todo.description);
+        return Objects.equals(id, todo.id) && Objects.equals(summary, todo.summary)
+                && Objects.equals(description, todo.description);
     }
 
     @Override
@@ -59,9 +63,10 @@ public class Todo {
     @Override
     public String toString() {
         return "Todo{" +
-            "id=" + id +
-            ", summary='" + summary + '\'' +
-            ", description='" + description + '\'' +
-            '}';
+                "id=" + id +
+                ", summary='" + summary + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
+
 }

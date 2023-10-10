@@ -1,17 +1,15 @@
-# dat250-spring-counter-todos starter project
+# dat250-spring-counter-todos
 
 The test suite (**TodoControllerTest**) should run after your implementation (see badge below). You are not allowed to change the test class!
 
 [![TodoControllerTest](../../actions/workflows/main.yml/badge.svg)](../../actions/workflows/main.yml)
 
-Check the tab **Actions** in GitHub for more information and to activate the workflow run.
+Check the tab **Actions** in GitHub for more information and to initially activate the workflow run.
 
-## **Careful:**
-1. The test class sends POST-Request to create TODOs without IDs and expects the single created TODO to return with an ID!
-See **[REST API examples](https://github.com/selabhvl/dat250-spring-counters-todos/tree/main#rest-api-examples)** PUT and POST below.
-2. Furthermore, if a Todo with a given id should be retrieved, updated, or deleted and it does not exist, the tests expect a specific error message. See GET, PUT, and DELETE.
+**Careful:** The test class sends POST-Request to create TODOs without ids and expects the single created TODO to return with an id!
+See **[REST API examples](https://github.com/selabhvl/dat250-spring-counters-todos/tree/main#rest-api-examples)** below.
 
-## REST API examples
+# REST API examples
 
 ### **GET** http://localhost:8080/todos
 ```json
@@ -40,18 +38,6 @@ See **[REST API examples](https://github.com/selabhvl/dat250-spring-counters-tod
   "id": 1,
   "summary": "Buy food",
   "description": "Buy an egg and ramen"
-}
-```
-
-### **GET** http://localhost:8080/todos/999
-If the Todo with the id 999 does not exist.
-```json
-{
-  "timestamp": "2023-10-06T11:52:27.842+00:00",
-  "status": 404,
-  "error": "Not Found",
-  "message": "Todo with the id 999 not found!",
-  "path": "/todos/999"
 }
 ```
 
@@ -89,26 +75,6 @@ Response:
   "description": "Buy two eggs and ramen"
 }
 ```
-### PUT http://localhost:8080/todos/999
-If the Todo with the id 999 does not exist.
-
-Body:
-```json
-{
-  "summary": "Buy copious amounts of food",
-  "description": "Buy two eggs and ramen"
-}
-```
-Response:
-```json
-{
-  "timestamp": "2023-10-06T11:54:55.392+00:00",
-  "status": 404,
-  "error": "Not Found",
-  "message": "Todo with the id 999 not found!",
-  "path": "/todos/999"
-}
-```
 ### DELETE http://localhost:8080/todos/1
 ```json
 [
@@ -123,16 +89,5 @@ Response:
     "description": "Train weight lifting for five hours"
   }
 ]
-```
-### DELETE http://localhost:8080/todos/999
-If the Todo with the id 999 does not exist.
-```json
-{
-  "timestamp": "2023-10-06T11:56:29.114+00:00",
-  "status": 404,
-  "error": "Not Found",
-  "message": "Todo with the id 999 not found!",
-  "path": "/todos/999"
-}
 ```
 
